@@ -1,0 +1,13 @@
+.navbar{
+    height: 100px;
+    background-color: var(--primary-black);
+}
+.navbar .navlogo {
+    vertical-align: center;
+    padding-left: 20px;
+}
+.navbar ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
