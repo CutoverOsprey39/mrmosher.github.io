@@ -6,51 +6,48 @@
         <title>Portfolio</title>
         <link rel="stylesheet" href="src/css/index.css" />
         <link rel="stylesheet" href="src/css/styleguide.css" />
-        <link rel="stylesheet" href="src/css/global.css" />
+        <link rel="stylesheet" href="src/global.css" />
         <style>
-        *{margin: 0px;}
+            * { margin: 0px; }
         </style>
     </head>
-    <body >
+    <body>
         <div> <!-- content wrapper -->
             <div>
                 <nav class="navbar"> 
                     <div>
-                        <h1
+                        <h1>
                             <a href="index.html" class="navlogo">
                                 <img src="src/img/navlogo.svg" alt="Logo"/>
                             </a>
                         </h1>
                     </div>
-                    <ul>
+                    <!-- Hamburger button -->
+                    <button class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <!-- Navigation list -->
+                    <ul class="nav-menu">
                         <li>
-                            <a href="#">
-                                <span>Archive</span>
-                            </a>
+                            <a href="#"><span>ARCHIVE</span></a>
                         </li>
                         <li>
-                            <a href="#">
-                                <span>Contact</span>
-                            </a>
+                            <a href="#"><span>CONTACT</span></a>
                         </li>
                     </ul>
                 </nav>
                 <nav class="subnav">
                     <ul>
-                        <li>
-                            <a href="#">
-                                <span>Design</span>
-                            </a>
+                        <li class="design">
+                            <a href="#"><span>DESIGN</span></a>
                         </li>
-                        <li>
-                            <a href="#">
-                                <span>Process</span>
-                            </a>
+                        <li class="process">
+                            <a href="#"><span>PROCESS</span></a>
                         </li>
-                        <li>
-                            <a href="#">
-                                <span>Code</span>
-                            </a>
+                        <li class="code">
+                            <a href="#"><span>CODE</span></a>
                         </li>
                     </ul>
                 </nav>
@@ -78,5 +75,15 @@
                 </div>
             </main>
         </div>
+        <!-- Add JavaScript at the end of body -->
+        <script>
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        </script>
     </body>
 </html>
