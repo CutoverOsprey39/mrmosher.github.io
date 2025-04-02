@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Portfolio</title>
+        <link rel="icon" type="image/png" sizes="32x26" href="src/img/favicon-32x26.png">
         <link rel="stylesheet" href="src/css/index.css" />
         <link rel="stylesheet" href="src/css/styleguide.css" />
         <link rel="stylesheet" href="src/global.css" />
@@ -34,10 +35,11 @@
                             <a href="#"><span>ARCHIVE</span></a>
                         </li>
                         <li>
-                            <a href="#"><span>CONTACT</span></a>
+                            <a href="#"><span>ABOUT</span></a>
                         </li>
                     </ul>
                 </nav>
+                <!--
                 <nav class="subnav">
                     <ul>
                         <li class="design">
@@ -51,28 +53,43 @@
                         </li>
                     </ul>
                 </nav>
-            </div> <!-- end nav -->
+            </div> --> <!-- end subnav -->
             <main>
-                <header>
-                    <h1>Welcome</h1>
-                </header>
-                <div>
-                    <h2>Recent Projects</h2>
-                    <div>
-                        <div class="bg-[#212121]">
-                            <h3>Project 1</h3>
-                            <p>Project 1 description</p>
+                <header class="header-container">
+                    <img class="header-image" src="src/img/home-watermark.png" alt="Header Background">
+                    <div class="header-text">
+                        <div class="title">
+                            <span>Welcome to Mr .Moshe{R}'s<br/></span>
+                            <span>Portfolio & Digital Archive</span>
                         </div>
-                        <div>
-                            <h3>Project 2</h3>
-                            <p>Project 2 description</p>
-                        </div>
-                        <div>
-                            <h3>Project 3</h3>
-                            <p>Project 3 description</p>
+                        <div class="description">
+                            This site showcases my projects for development, design, and UX/UI. Explore a collection of projects that blend technical developments with creative expression, to solve problems and elevate user experiences. This progressive site captures the journey across code, aesthetics, and interface design.
                         </div>
                     </div>
-                </div>
+                </header>
+                <section class="recent-projects">
+                    <h2 class="projects-title">Recent Projects</h2>
+                    <div class="projects-container">
+                        <div class="project-item">
+                            <img class="project-image" href="#" src="src/img/tjtoohey500.png" alt="Project 1">
+                            <div class="project-name-bar">
+                                <h3 class="project-name">TJ TOOHEY</h3>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <img class="project-image" href="#" src="src/img/Alarmworks logo v1.svg" alt="Project 2">
+                            <div class="project-name-bar">
+                                <h3 class="project-name">ALARMWORKZ</h3>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <img class="project-image" href="#" src="src/img/Opportunity Bank 500.png" alt="Project 3">
+                            <div class="project-name-bar">
+                                <h3 class="project-name">OPPORTUNITY BANK</h3>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
         </div>
         <!-- Add JavaScript at the end of body -->
@@ -85,5 +102,8 @@
                 navMenu.classList.toggle('active');
             });
         </script>
+        <footer class="site-footer">
+            <p class="footer-text">&copy; 2025 Nathan Mosher All rights reserved.</p>
+        </footer>
     </body>
 </html>
