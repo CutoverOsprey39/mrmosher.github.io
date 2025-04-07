@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio</title>
+        <link rel="icon" type="image/png" sizes="32x26" href="src/img/favicon-32x26.png">
+        <link rel="stylesheet" href="src/css/about.css" />
+        <link rel="stylesheet" href="src/css/styleguide.css" />
+        <link rel="stylesheet" href="src/global.css" />
+        <style>
+            * { margin: 0px; }
+        </style>
+    </head>
+    <body>
+        <div> <!-- content wrapper -->
+            <div>
+                <nav class="navbar"> 
+                    <div>
+                        <h1>
+                            <a href="index.html" class="navlogo">
+                                <img src="src/img/navlogo.svg" alt="Logo"/>
+                            </a>
+                        </h1>
+                    </div>
+                    <!-- Hamburger button -->
+                    <button class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <!-- Navigation list -->
+                    <ul class="nav-menu">
+                        <li>
+                            <a href="#"><span>ARCHIVE</span></a>
+                        </li>
+                        <li>
+                            <a href="about.html"><span>ABOUT</span></a>
+                        </li>
+                    </ul>
+                </nav>
+                <!--
+                <nav class="subnav">
+                    <ul>
+                        <li class="design">
+                            <a href="#"><span>DESIGN</span></a>
+                        </li>
+                        <li class="process">
+                            <a href="#"><span>PROCESS</span></a>
+                        </li>
+                        <li class="code">
+                            <a href="#"><span>CODE</span></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div> --> <!-- end subnav -->
+            <main>
+                <header class="header-container">
+                    <img class="header-image" src="src/img/profile-photo.jpg" alt="Header Background">
+                    <div class="header-text">
+                        <div class="title">
+                            <span>About Mr .Moshe{R;}<br/></span>                        </div>
+                        <div class="description">
+                            Born and raised in Duvall Washington, Nathan Mosher is a UX/UI Designer and Developer with a track record of delivering impactful digital solutions. Educated at Montana State University in both Graphic Design and Computer Science, he has spent 6 years mastering both front-end and back-end technologies while building portfolios showcasing expertise in both design and code. Ensuring that designs are user-friendly and intuitive.
+
+                            Nathan is a high-achieving, results-oriented individual with strong critical thinking skills and an advocate of the iterative process. Thriving as a collaborative and self-directed team player who excels when challenged.                    </div>
+                </header>
+
+                <!-- Full-Width Dropdown Bar -->
+                <div class="resume-bar">
+                    <div class="bar-header">
+                        <!-- Group the arrow and subheader together on the left -->
+                        <div class="header-left">
+                            <span class="dropbtn"><img src="src/img/arrow-icon.png" class="arrow" alt="Arrow Down"></span>
+                            <h2 class="subheader">Resume 2025</h2>
+                        </div>
+                        <!-- External link on the right -->
+                        <a href="src/img/Mosher-Resume(color digital only)-2025.pdf" target="_blank" class="open-link">
+                            <img src="src/img/External-link.svg" alt="Open PDF">
+                        </a>
+                    </div>
+                    <div class="dropdown-content">
+                        <div class="pdf-preview">
+                            <embed src="src/img/Mosher-Resume(color digital only)-2025.pdf" type="application/pdf" width="100%" height="500px">
+                        </div>
+                    </div>
+                </div>
+                <!-- contact info-->
+                <section class="recent-projects">
+                    <div class="projects-display">
+                    <h2 class="projects-title">Get in Touch!</h2>
+                    <div class="projects-container">
+                        <div class="project-item">
+                            <a href="tel:425-951-0102" class="project-link">
+                                <img class="project-image" src="src/img/phone-icon.svg" alt="Phone icon">
+                            </a>
+                            <div class="project-name-bar">
+                                <a href="tel:425-951-0102" class="project-name">425-951-0102</a>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <a href="mailto:moshernat@hotmail.com" class="project-link">
+                                <img class="project-image" src="src/img/mail.svg" alt="Email icon">
+                            </a>
+                            <div class="project-name-bar">
+                                <a href="mailto:moshernat@hotmail.com" class="project-name">MOSHERNAT@HOTMAIL.COM</a>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <a href="https://linkedin.com/in/nathan-mosher/" class="project-link">
+                                <img class="project-image" src="src/img/Linkedin.svg" alt="LinkedIn icon">
+                            </a>
+                            <div class="project-name-bar">
+                                <a href="https://linkedin.com/in/nathan-mosher/" class="project-name">LINKEDIN</a>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <!-- Add JavaScript at the end of body -->
+        <script>
+       document.querySelector('.dropbtn').addEventListener('click', function() {
+            const dropdownContent = document.querySelector('.dropdown-content');
+            const arrow = document.querySelector('.arrow');
+            dropdownContent.classList.toggle('show');
+            if (dropdownContent.classList.contains('show')) {
+                arrow.style.transform = 'rotate(0deg)';
+            } else {
+                arrow.style.transform = 'rotate(-90deg)';
+            }
+        });
+        </script>
+        <footer class="site-footer">
+            <p class="footer-text">&copy; 2025 Nathan Mosher All rights reserved.</p>
+        </footer>
+    </body>
+</html>
