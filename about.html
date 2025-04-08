@@ -121,6 +121,13 @@
         </div>
         <!-- Add JavaScript at the end of body -->
         <script>
+                        const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
        document.querySelector('.dropbtn').addEventListener('click', function() {
             const dropdownContent = document.querySelector('.dropdown-content');
             const arrow = document.querySelector('.arrow');
