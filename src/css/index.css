@@ -1,264 +1,115 @@
 
-/* Header Container */
-.header-container {
-    display: flex;
-    flex-wrap: nowrap; /* Side-by-side for large/medium */
-    padding: 50px 5%; /* 5% side margins */
-    align-items: stretch;
-    max-width: 1200px;
-    margin: 0 auto;
-
-    color: var(--white);
-}
-
-.header-image {
-    width: 50%; /* 50% width for large/medium screens */
-    height: auto; /* Maintains aspect ratio, prevents cropping */
-    flex-shrink: 0;
-}
-
-.header-text {
-    width: 50%; /* 50% width for large/medium screens */
-    padding-left: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.title {
-    display: block; /* Ensures block-level behavior */
-    font-family: var(--primary-heading-font-family);
-    font-weight: var(--primary-heading-font-weight);
-    font-size: clamp(20px, 4vw, 32px);
-    line-height: var(--primary-heading-line-height);
-    letter-spacing: var(--primary-heading-letter-spacing);
-    color: var(--primary-orange);
-    margin: 0;
-    word-wrap: break-word;
-}
-
-.title-orange {
-    color: var(--primary-orange);
-}
-
-.description {
-    display: block; /* Ensures block-level behavior */
-    padding-top: 5px;
-    font-family: var(--primary-body-copy-font-family);
-    font-weight: var(--primary-body-copy-font-weight);
-    font-size: clamp(12px, 2vw, var(--primary-body-copy-font-size)); /* 12px to 20px */
-    line-height: var(--primary-body-copy-line-height); /* Default for large */
-    letter-spacing: var(--primary-body-copy-letter-spacing);
-    color: var(--white);
-    margin-top: 10px;
-    word-wrap: break-word;
-/*project styles */
-}
-.recent-projects {
-    max-width: 100%;
-    background: var(--variable-collection-alt-black);
-}
-
-.projects-display {
-    max-width: 1000px;
-    padding: 50px 5%; /* Matches header padding */
-    margin: 0 auto;
-}
-
-.projects-title {
-    font-family: var(--primary-heading-font-family);
-    font-weight: var(--primary-heading-font-weight);
-    font-size: clamp(20px, 4vw, 28px);
-    line-height: var(--primary-heading-line-height);
-    color: var(--white);
-    margin: 0 0 30px 0; /* Space below title */
-    text-align: center;
-}
-
-.projects-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns at largest size */
-    gap: 20px; /* Space between grid items */
-    justify-content: center;
-}
-
-.project-item {
-    max-width: 300px;
-    transition: all 0.3s ease; /* Smooth hover transition */
-    width: 100%; /* Ensures it fills grid cell */
-    margin: 0 auto; /* Center within grid cell */
-}
-
-.project-image {
-    width: 100%; /* Full width of container */
-    height: auto; /* Maintains aspect ratio */
-    height: 300px; /* Fixed height */
-    display: block;
-    object-fit: cover; /* Ensures image fills space nicely */
-}
-
-.project-name-bar {
-    background: var(--dark-gray-bg); /* Dark gray bar */
-    padding: 10px;
-    text-align: center;
-    transition: background 0.3s ease; /* Smooth hover transition */
-}
-
-.project-name {
-    font-family: var(--secondary-subheading-font-family);
-    font-weight: var(--secondary-subheading-font-weight);
-    font-size: calc(var(--secondary-subheading-font-size)*.7); /* e.g., 16px */
-    color: var(--white);
-    margin: 0;
-}
-/*end projects styles */
-
-/* Hover Effects */
-.project-item:hover .project-image {
-    filter: brightness(1.2); /* Lightens image by 20% */
-}
-
-.project-item:hover .project-name-bar {
-    background: var(--secondary-gray); /* Lighter gray on hover */
-}
-
-/* Medium Screens (500px - 1000px) */
-@media (max-width: 1000px) {
-    .header-container {
-        flex-wrap: nowrap; /* Still side-by-side */
-        padding: 50px 5%;
-    }
-    .header-image {
-        width: 50%;
-        height: auto;
-    }
-    .header-text {
-        width: 50%;
-
-    }
-    .title {
-        font-size: clamp(16px, 3vw, 32px); /* 16px to 32px */
-    }
-    .description {
-        font-size: clamp(10px, 1.5vw, 16px); /* 10px to 16px */
-        line-height: calc(var(--primary-body-copy-line-height) * 0.65); /* 15% smaller */
-    }
-    /* project styles */
-
-    /* project styles */
-    .projects-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns */
-        gap: 20px;
-    }
-    .projects-title {
-        font-size: clamp(18px, 2.5vw, 28px);
-    }
-    /* end project styles */
-}
+        .grid-wrapper {
+            align-content: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two columns for desktop */
+            gap: 40px;
+            padding: 20px;
+            max-width: 1500px;
+            margin: 0 auto;
+        
+        }
 
 
-/* Small Screens (<700px, down to 320px) */
-@media (max-width: 700px) {
-    .header-container {
-        flex-direction: column; /* Stack vertically */
-        flex-wrap: wrap;
-        padding-top: 20px;
-        max-width: 320px;
-    }
-    .header-image {
-        width: 100%;
-        height: auto;
-        margin: 0 auto;
-        max-width: 300px;
-    }
-    .header-text {
-        width: 100%;
-        padding: 0; /* Remove left padding */
-        padding-top: 20px;
-        text-align: left;
-    }
-    .title {
-        font-size: clamp(16px, 5vw, 20px); /* 14px to 20px */
-    }
-    .description {
-        font-size: clamp(10px, 3vw, 12px); /* 10px to 12px */
-        line-height: calc(var(--primary-body-copy-line-height) * 0.6); /* 25% smaller */
-    }
-    /*project styles */
-    .recent-projects {
-        padding: 20px 10px; /* Matches header for 320px viewport */
-    }
-    .projects-container {
-        grid-template-columns: 1fr; /* Single column */
-        gap: 15px; /* Reduced gap for smaller screens */
-    }
-    .project-item {
-        max-width: 300px;
-    }
-    .project-image {
-        width: 100%;
-        height: auto; /* Maintains aspect ratio */
-        max-height: 300px; /* Caps height */
-    }
-    .projects-title {
-        font-size: clamp(14px, 5vw, 18px);
-    }
-    /* end project styles */
-}
-@media (max-width: 768px) {
-    .navbar {
-        height: 100px; /* Keep fixed height unless you want it auto */
-        padding: 0; /* Remove padding for better control on mobile */
-    
-    }
-  
-    .navbar .hamburger {
-        display: block; /* Show hamburger on mobile */
-    }
-  
-    .navbar ul.nav-menu {
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--primary-black);
-        transform: translateY(-100%); /* Hidden by default */
-        opacity: 0;
-        transition: all 0.3s ease;
-        z-index: 99; /* Ensure it appears above other content */
-    }
-  
-    .navbar ul.nav-menu.active {
-        transform: translateY(0%); /* Slide in when active */
-        opacity: 1;
-        border-bottom: 1px solid var(--stroke-for-container); /* Maintain for mobile navbar */
-    }
-  
-    .navbar ul.nav-menu li {
-        padding: 10px ;
-        padding-bottom: 20px;
-        width: 100%;
-        text-align: center;
-    }
-  
-    .navbar ul.nav-menu li:hover a {
-        color: var(--stroke-for-container);
-        transition: all 0.2s ease;
-    }
-    
-    /* Hamburger to X transformation */
-    .navbar .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px);
-        border-radius: 2px;
-    }
-  
-    .navbar .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-  
-    .navbar .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -7px);
-        border-radius: 2px;
-    } 
-}
+        .content-1, .content-2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: top;
+        }
+
+        .content-1 h2, .content-1 h4 {
+            text-align: left;
+            max-width: 730px;
+        }
+
+        .content-1 h2 {
+            color: #F27405
+        }
+
+        .content-1 h4 {
+            color: #FFFFFF;
+        }
+        .content-1 button {
+            width: 150px;
+            height: 50px;
+            margin-top: 20px;
+
+        }
+        .content-1 .button:hover {
+            color: #a4a4a4;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+            cursor: pointer;
+        }
+
+        .content-2 img {
+            max-width: 500px;
+            height: auto;
+            border-radius: 10%;
+            border: #f25c5c 3px solid;
+        }
+
+        .external_links{
+            padding: 20px;
+            cursor: pointer;
+            display:flex;
+            gap: 20px;
+            justify-content: flex-start;
+            max-width: 1500px;
+            margin: 0 auto;            
+        }
+
+        .external_links a img{
+            width: 40px;
+            height: auto;
+            margin-bottom: 3rem;
+        }
+        .external_links a img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Desktop layout */
+        @media (min-width: 769px) {
+            .content-2{
+                padding-top: 50px;
+            }
+            .content-1 button{
+                align-self: left;
+            }
+            .external_links{
+                justify-content: flex-start;
+                
+            }
+        }
+
+
+        /* Mobile layout */
+        @media (max-width: 768px) {
+            .grid-wrapper {
+                grid-template-columns: 1fr; /* Single column for mobile */
+                grid-template-rows: auto auto;
+            }
+
+            .content-1 {
+                order: 1; /* Ensure text appears first */
+            }
+            .content-1 button{
+                align-self: center;
+            }
+
+            .content-2 {
+                order: 2; /* Image comes second */
+            }
+            .content-2 img {
+                max-width: 90%;
+                align-self: center;
+            }
+            .external_links{
+                justify-content: center;
+            }
+        }
+        /* External links alignment for large desktops */
+        @media (min-width: 1501px) {
+            .external_links{
+                justify-content: flex-start; /*left justify for large desktops*/
+            }
+        }

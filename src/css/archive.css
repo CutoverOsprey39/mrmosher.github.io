@@ -1,0 +1,81 @@
+/* Base (mobile first) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    margin: 0 auto;
+    max-width: 100vw; /* Prevent horizontal overflow */
+    overflow-x: hidden; /* Hide horizontal overflow */
+  }
+  
+  h2 {
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 100%; /* Ensure gallery fits within body */
+    box-sizing: border-box;
+    margin-bottom: 4rem;
+  }
+  
+  .gallery a {
+    display: block; /* Ensure anchor fills grid cell */
+    text-decoration: none; /* Remove default underline */
+    color: inherit; /* Inherit text color */
+  }
+  
+  .gallery a:hover figure {
+    background-color: #333333; /* Lighter gray for hover contrast */
+    opacity: 0.9; /* Slight fade for hover effect */
+    transition: background-color 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+  }
+  
+  figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    background-color: #212121; /* Black background */
+    aspect-ratio: 1/1; /* Maintain square figure */
+    padding: 1rem;
+
+  }
+  
+  figure img {
+    max-width: 100%; 
+    height: auto; 
+    aspect-ratio: 3/3; 
+    width: min(100%, 400px); /* Ensure consistent size, cap at 200px or 90% of figure */
+    min-width: 100px; /* Prevent SVGs from becoming too tiny */
+  }
+  
+
+  @media (min-width: 768px) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      padding: 1.5rem;
+    }
+  }
+  
+  /* Desktop (≥1025px) */
+  @media (min-width: 1025px) {
+    body {
+      max-width: 1500px;
+      overflow-x: hidden; /* Reinforce no horizontal overflow */
+    }
+    .gallery {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      padding: 2rem;
+    }
+  }

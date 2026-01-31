@@ -1,0 +1,340 @@
+/* Import Roboto font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Global box-sizing and reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base styles */
+:root {
+  --base-font-size: 16px;
+  --header-font: 'Roboto', sans-serif;
+  --body-font: 'Roboto', sans-serif;
+  --header-weight: 700;
+  --body-weight: 400;
+  --primary-color: #ffffff;
+  --hover-color: #a4a4a4;
+  --navbar-bg: #212121;
+  --body-bg: #1B1B1B;
+}
+
+/* HTML and Body */
+html {
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  background-color: var(--body-bg);
+  font-family: var(--body-font);
+  font-weight: var(--body-weight);
+  font-size: var(--base-font-size);
+  line-height: 1.5;
+  overflow-x: hidden;
+  padding-top: 80px; /* Space for fixed navbar */
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6, button{
+  font-family: var(--header-font);
+  font-weight: var(--header-weight);
+  margin: 0.5em 0;
+}
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--navbar-bg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.25rem;
+  z-index: 1000;
+}
+
+/* Logo */
+.navlogo img {
+  height: 30px;
+  width: auto;
+  max-width: 100%;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 4px;
+  background-color: var(--primary-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Navigation menu */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu li {
+  margin: 0 1.5rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-family: var(--body-font);
+  font-weight: 400;
+  font-size: calc(var(--base-font-size) * 1);
+  position: relative;
+}
+
+.nav-menu a:hover {
+  color: var(--hover-color);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Content */
+.content {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--navbar-bg);
+  padding: 1rem;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.footer-text {
+  font-family: var(--body-font);
+  font-weight: 400;
+  font-size: calc(var(--base-font-size) * 0.9);
+  color: #E8E8E8;
+}
+
+/* Responsive font scaling */
+
+/* Mobile portrait (up to 576px) */
+@media screen and (max-width: 576px) and (orientation: portrait) {
+  :root {
+    --base-font-size: 14px;
+  }
+
+  h1 { font-size: calc(var(--base-font-size) * 2); }
+  h2 { font-size: calc(var(--base-font-size) * 1.75); }
+  h3 { font-size: calc(var(--base-font-size) * 1.5); }
+  h4 { font-size: calc(var(--base-font-size) * 1.25); }
+  h5, h6 { font-size: calc(var(--base-font-size) * 1.1); }
+
+  .navbar {
+    padding: 0.5rem;
+  }
+
+  .hamburger {
+    display: flex;
+    margin: 10px;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: var(--navbar-bg);
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu li {
+    margin: 0.5rem 1rem;
+  }
+
+  .nav-menu a {
+    font-size: calc(var(--base-font-size) * 1.1);
+  }
+
+  .navlogo img {
+    height: 30px;
+  }
+}
+
+/* Mobile landscape */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  :root {
+    --base-font-size: 15px;
+  }
+
+  h1 { font-size: calc(var(--base-font-size) * 2.2); }
+  h2 { font-size: calc(var(--base-font-size) * 1.9); }
+  h3 { font-size: calc(var(--base-font-size) * 1.6); }
+  h4 { font-size: calc(var(--base-font-size) * 1.3); }
+  h5, h6 { font-size: calc(var(--base-font-size) * 1.15); }
+
+  .navbar {
+    padding: 0.5rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: var(--navbar-bg);
+    padding: 1rem 0;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu li {
+    margin: 0.5rem 1rem;
+  }
+
+  .nav-menu a {
+    font-size: calc(var(--base-font-size) * 1.1);
+  }
+
+  .navlogo img {
+    height: 30px;
+  }
+}
+
+/* Tablet and above (min-width: 577px) */
+@media screen and (min-width: 577px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav-menu {
+    display: flex !important;
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .nav-menu li {
+    margin: 0 1.5rem;
+  }
+
+  .navlogo img {
+    height: 30px;
+  }
+}
+
+/* Tablet landscape and small desktop (769px - 992px) */
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  :root {
+    --base-font-size: 17px;
+  }
+
+  h1 { font-size: calc(var(--base-font-size) * 2.8); }
+  h2 { font-size: calc(var(--base-font-size) * 2.2); }
+  h3 { font-size: calc(var(--base-font-size) * 1.8); }
+  h4 { font-size: calc(var(--base-font-size) * 1.5); }
+  h5, h6 { font-size: calc(var(--base-font-size) * 1.3); }
+
+  .nav-menu a {
+    font-size: calc(var(--base-font-size) * 1.1);
+  }
+}
+
+/* Desktop (993px - 1200px) */
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+  :root {
+    --base-font-size: 18px;
+  }
+
+  h1 { font-size: calc(var(--base-font-size) * 3); }
+  h2 { font-size: calc(var(--base-font-size) * 2.4); }
+  h3 { font-size: calc(var(--base-font-size) * 2); }
+  h4 { font-size: calc(var(--base-font-size) * 1.6); }
+  h5, h6 { font-size: calc(var(--base-font-size) * 1.4); }
+
+  .nav-menu a {
+    font-size: calc(var(--base-font-size) * 1.2);
+  }
+}
+
+/* Large desktop (1201px and up) */
+@media screen and (min-width: 1201px) {
+  :root {
+    --base-font-size: 20px;
+  }
+
+  h1 { font-size: calc(var(--base-font-size) * 3.2); }
+  h2 { font-size: calc(var(--base-font-size) * 2.6); }
+  h3 { font-size: calc(var(--base-font-size) * 2.2); }
+  h4 { font-size: calc(var(--base-font-size) * 1.8); }
+  h5, h6 { font-size: calc(var(--base-font-size) * 1.5); }
+
+  .nav-menu a {
+    font-size: calc(var(--base-font-size) * 1.2);
+  }
+
+  .navlogo img {
+    height: 35px;
+  }
+}
+
+/* High-resolution displays */
+@media screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body {
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

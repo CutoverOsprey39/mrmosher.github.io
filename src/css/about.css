@@ -1,75 +1,99 @@
-
-
-  /* Header Container */
-  .header-container {
-    display: flex;
-    flex-wrap: nowrap; /* Keeps items side-by-side */
-    padding: 50px 5%; /* 5% side margins */
-    align-items: center; /* Vertically centers image and text */
-    max-width: 1000px;
-    width: 100%; /* Ensures container takes full available width up to max-width */
-    margin: 0 auto; /* Centers the container on the page */
-    color: var(--white);
-    box-sizing: border-box; /* Includes padding in width calculation */
+/* main content area */
+.head-image {
+    position: relative;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.header-image {
-    width: auto; /* Removes fixed 50% width */
-    max-width: 60%; /* Limits image width to 50% of container */
-    height: auto; /* Maintains aspect ratio */
-    max-height: 300px; /* Matches text height approximately—adjust as needed */
-    flex-shrink: 0;
-    aspect-ratio: 1 / 1; /* Ensures image is square */
-    object-fit: contain; /* Ensures image scales without distortion */
-    margin-right: 20px; /* Space between image and text */
+.head-image img {
+    width: 100%;
+    object-fit: contain;
+    border-bottom: #f25c5c 5px solid;
+    border-radius: 2%;
+
 }
 
-.header-text {
-    flex: 1; /* Allows text to take remaining space */
-    padding-left: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+.head-image h2, .head-image h5, .head-image p {
+    width: 50%;
+
+}
+.head-image h2 {
+    position: absolute;
+    top: 20%;
+    left: 20px;
+    color: black; /* Set default color for desktop */
+    text-shadow: 2px 2px 4px white;
 }
 
-.title {
-    display: block;
-    font-family: var(--primary-heading-font-family);
-    font-weight: var(--primary-heading-font-weight);
-    font-size: clamp(20px, 4vw, 32px);
-    line-height: var(--primary-heading-line-height);
-    letter-spacing: var(--primary-heading-letter-spacing);
-    color: var(--primary-orange);
-    margin: 0;
-    word-wrap: break-word;
+.head-image h4 {
+    position: absolute;
+    top: 30%;
+    left: 20px;
+    color: black; /* Set default color for desktop */
+    text-shadow: 2px 2px 4px white;
 }
 
-.title-orange {
-    color: var(--primary-orange);
+.head-image p {
+    background-color: #373737;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    color: white;
+    font-weight: 400;
 }
 
-.description {
-    display: block;
-    padding-top: 5px;
-    font-family: var(--primary-body-copy-font-family);
-    font-weight: var(--primary-body-copy-font-weight);
-    font-size: clamp(12px, 2vw, var(--primary-body-copy-font-size));
-    line-height: var(--primary-body-copy-line-height);
-    letter-spacing: var(--primary-body-copy-letter-spacing);
-    color: var(--white);
-    max-width: 60ch;
-    margin-top: 10px;
-    word-wrap: break-word;
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .head-image {
+        text-align: left; /* Center text below image */
+    }
+
+    .head-image img {
+        display: block; /* Ensure image takes full width */
+    }
+
+    .head-image h2{
+        position: static; /* Place in normal flow below image */
+        width: 100%; /* Full width for better readability */
+        color: #F27405; /* Set text color to white */
+        text-shadow: none; /* Remove text shadow for clarity */
+        padding-left: 10px; /* Add horizontal padding */
+        padding-right: 10px;
+    }
+
+    .head-image h4{
+        position: static; /* Place in normal flow below image */
+        width: 100%; /* Full width for better readability */
+        color: #f25c5c; /* Set text color to white */
+        text-shadow: none; /* Remove text shadow for clarity */
+        padding-left: 10px; /* Add horizontal padding */
+        padding-right: 10px;
+    }
+
+    .head-image p {
+        position: static; /* Place in normal flow below image */
+        width: 100%; /* Full width for better readability */
+        color: white; /* Set text color to white */
+        text-shadow: none; /* Remove text shadow for clarity */
+        padding-left: 10px; /* Add horizontal padding */
+        padding-right: 10px;
+        background-color: transparent; /* Remove background color */
+
+    }
 }
+
 
 /* Full-Width Resume Bar */
 .resume-bar {
     width: 100%;
-    background-color: var(--dark-gray-bg);
-    color: var(--white);
-    margin: 20px 0 0 0;
+    background-color: #373737;
+    color: #FFFFFF;
     border-radius: 5px 5px 0 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    max-width: 1200px;
+    justify-self: center;
 }
 
 /* Bar Header (Contains Left and Right Elements) */
@@ -92,6 +116,7 @@
     cursor: pointer;
     display: inline-block;
 }
+
 /* Arrow Icon */
 .arrow {
     transform: rotate(-90deg); /* Start at -90 degrees */
@@ -108,255 +133,91 @@
     filter: brightness(1.2); /* Matches your project image hover effect */
 }
 
-/* Subheader */
-.subheader {
-    font-family: var(--primary-heading-font-family);
-    font-weight: var(--primary-heading-font-weight);
-    font-size: clamp(20px, 4vw, 28px);
-    line-height: var(--primary-heading-line-height);
-    color: var(--salmon-secondary-color);
-    margin: 0; /* Remove default margin */
-}
-
-/* Open Link (External Link Icon on the Right) */
-.open-link {
-    display: inline-block;
-}
-
-.open-link img {
-    width: 24px; /* Adjust size to match your design */
-    height: auto;
-    transition: filter 0.3s ease;
-}
-
-.open-link:hover img {
-    filter: brightness(1.2); /* Matches your project image hover effect */
-}
-
-/* Dropdown Content (Hidden by Default) */
+/* Dropdown Content (PDF Preview) */
 .dropdown-content {
-    display: none;
-    background-color: var(--variable-collection-alt-black);
-    padding: 20px 5%;
+    display: none; /* Hidden by default */
+    width: 100%;
+    max-width: 1200px; /* Match the max-width of the resume bar */
+    margin: 0 auto; /* Center align */
+    background-color: #373737;
     border-radius: 0 0 5px 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    
 }
 
-/* Show Dropdown When Toggled */
 .dropdown-content.show {
-    display: block;
+    display: block; /* Show when 'show' class is added */
+    width: 100%;
+    max-width: 1200px; /* Match the max-width of the resume bar */
+    margin: 0 auto; /* Center align */
+    background-color: #373737;
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+
 }
 
 /* PDF Preview */
-.pdf-preview {
+.pdf-preview{
     width: 100%;
-    max-width: 800px;
+    max-width: 1200px; /* Match the max-width of the resume bar */
+    margin: 0 auto; /* Center align */
     height: auto;
-    margin: 0 auto;
-    border-radius: 5px;
-    overflow: hidden;
 }
 
 .pdf-preview embed {
-    display: block;
+    aspect-ratio: 8.5/11;
+    max-width: 1200px; /* Match the max-width of the resume bar */
+    width: 100%;
+    height: auto;
+    display:block;
+    margin: 0 auto; 
 }
 
-/* Responsive Adjustments */
+/* External Link Icon */
+.open-link img {
+    width: 24px;
+    height: auto;
+}
 
-  /*project styles */
-  .recent-projects {
-      max-width: 100%;
-      background: var(--variable-collection-alt-black);
-  }
-  
-  .projects-display {
-      max-width: 1000px;
-      padding: 50px 5%; /* Matches header padding */
-      margin: 0 auto;
-  }
-  
-  .projects-title {
-      font-family: var(--primary-heading-font-family);
-      font-weight: var(--primary-heading-font-weight);
-      font-size: clamp(20px, 4vw, 28px);
-      line-height: var(--primary-heading-line-height);
-      color: var(--white);
-      margin: 0 0 30px 0; /* Space below title */
-      text-align: center;
-  }
-  
-  .projects-container {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 columns at largest size */
-      gap: 20px; /* Space between grid items */
-      justify-content: center;
-  }
-  
-  .project-item {
-      max-width: 300px;
-      transition: all 0.3s ease; /* Smooth hover transition */
-      width: 100%; /* Ensures it fills grid cell */
-      margin: 0 auto; /* Center within grid cell */
-      text-align: center; /* Center text within grid item */
-  }
-  
-  .project-image {
-      width: 50px; /* fixed width of container */
-      height: auto; /* Maintains aspect ratio */
-      display: block;
-      object-fit: cover; /* Ensures image fills space nicely */
-      margin: 0 auto; /* Center within grid cell */
-  }
-  
-  .project-name-bar {
-      padding: 10px;
-      text-align: center;
-      transition: background 0.3s ease; /* Smooth hover transition */
-  }
-  
-  .project-name {
-      font-family: var(--secondary-subheading-font-family);
-      font-weight: var(--secondary-subheading-font-weight);
-      font-size: calc(var(--secondary-subheading-font-size)*.7); /* e.g., 16px */
-      color: var(--white);
-      margin: 0 auto;
-      display: inline-block;
-      text-decoration: none; /* Remove underline */
-  }
-  /*end projects styles */
-  
-  /* Hover Effects */
-  .project-item:hover .project-image {
-      filter: brightness(1.2); /* Lightens image by 20% */
-  }
+.external_links{
+    padding: 20px;
+    cursor: pointer;
+    display:flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1500px;   
+}
 
-  /* Medium Screens (500px - 1000px) */
-  @media (max-width: 1000px) {
-      .header-container {
-          flex-wrap: nowrap; /* Still side-by-side */
-          padding: 50px 5%;
-      }
-      .header-image {
-          width: 50%;
-          height: auto;
-      }
-      .header-text {
-          width: 50%;
-  
-      }
-      .title {
-          font-size: clamp(16px, 3vw, 32px); /* 16px to 32px */
-      }
-      .description {
-          font-size: clamp(10px, 1.5vw, 16px); /* 10px to 16px */
-          line-height: calc(var(--primary-body-copy-line-height) * 0.65); /* 15% smaller */
-      }
-      /* project styles */
-  
-      /*resume bar styles */
-      .resume-bar {
-        margin: 20px 0 0 0 0;
+.external_links a img{
+    width: 40px;
+    height: auto;
+    margin-bottom: 3rem;
+}
+.external_links a img:hover {
+    transform: scale(1.05);
+}
+
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .resume-bar {
+        margin: 10px 0 0 0;
     }
     .bar-header {
-        padding: 15px 5%; /* Matches header-container padding */
-    }
-    .dropdown-content {
-        padding: 20px 5%;
-    }
-    .subheader {
-        font-size: clamp(18px, 2.5vw, 28px); /* Matches projects-title */
-    }
-    .pdf-preview embed {
-        aspect-ratio: 8.5/11;
+        padding: 10px 10px;
     }
     .dropbtn img.arrow, .open-link img {
-        width: 20px; /* Slightly smaller icons */
+        width: 18px; /* Smaller icons on mobile */
     }
+    .header-left {
+        gap: 8px; /* Reduce gap on smaller screens */
+    }
+}
 
-      /* project styles */
-      .projects-container {
-          grid-template-columns: repeat(3, 1fr); /* 2 columns */
-          gap: 20px;
-      }
-      .projects-title {
-          font-size: clamp(18px, 2.5vw, 14px);
-      }
-      /* end project styles */
-  }
-  
-  
-  /* Small Screens (<700px, down to 320px) */
-  @media (max-width: 700px) {
-      .header-container {
-          flex-direction: column; /* Stack vertically */
-          flex-wrap: wrap;
-          padding-top: 20px;
-          max-width: 320px;
-      }
-      .header-image {
-          width: 100%;
-          height: auto;
-          margin: 0 auto;
-          max-width: 300px;
-      }
-      .header-text {
-          width: 100%;
-          padding: 0; /* Remove left padding */
-          padding-top: 20px;
-          text-align: left;
-      }
-      .title {
-          font-size: clamp(16px, 5vw, 20px); /* 16px to 20px */
-      }
-      .description {
-          font-size: clamp(10px, 3vw, 12px); /* 10px to 12px */
-          line-height: calc(var(--primary-body-copy-line-height) * 0.6); /* 25% smaller */
-      }
+/* Desktop layout */
+@media (min-width: 769px) {
 
-        /* resume bar styles */
-        .resume-bar {
-            margin: 10px 0 0 0 0;
-        }
-        .bar-header {
-            padding: 10px 10px;
-        }
-        .subheader {
-            font-size: clamp(16px, 5vw, 18px);
-        }
-        .pdf-preview embed {
-            aspect-ratio: 8.5/11;
-        }
-        .dropbtn img.arrow, .open-link img {
-            width: 18px; /* Smaller icons on mobile */
-        }
-        .header-left {
-            gap: 8px; /* Reduce gap on smaller screens */
-        }
-      /*project styles */
-      .recent-projects {
-          padding: 20px 10px; /* Matches header for 320px viewport */
-      }
-      .projects-container {
-          grid-template-columns: 1fr; /* Single column */
-          gap: 15px; /* Reduced gap for smaller screens */
-      }
-      .project-item {
-          max-width: 300px;
-      }
-      .project-image {
-          width: 50px;
-          height: auto; /* Maintains aspect ratio */
-          max-height: 300px; /* Caps height */
-      }
-      .projects-title {
-          font-size: clamp(16px, 5vw, 18px);
-      }
-      .project-name{
-        font-size: clamp(10px, 3vw, 12px)
-      }
-      /* end project styles */
-  }
+}
 
-    
- 
-  
+
